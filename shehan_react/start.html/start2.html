@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        class HelloWorld extends React.Component {
+            render() {
+                    
+                return (
+                    <div>
+                        <ReactImge {...this.props}/>
+                        <ReactCaption {...this.props}/>
+                        <ReactLink {...this.props}/>
+                        </div>
+                );
+            }
+        }
+        class ReactImge extends React.Component{
+            render(){
+                return(
+                    
+                    <div> <img src={this.props.src}/></div>
+                    
+                    
+                )
+            }
+
+        }      class ReactCaption extends React.Component{
+            render(){
+                return(
+                   <div> <p>{this.props.caption}</p></div>
+                    
+                )
+            }
+
+        }      class ReactLink extends React.Component{
+            render(){
+                return(
+                    <div><a href={this.props.hraf}>Click</a></div>
+                    
+                )
+            }
+
+        }
+
+        const dest = document.querySelector('#container');
+        ReactDOM.render(
+            <HelloWorld src='image02.webp' caption = 'web web' hraf='https://www.youtube.com/' />,
+            dest
+        );
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type ="text/babel">
+        class Hello extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={name:"Shehan",address:"sri lanka",phone:'0764230420' ,bgcolor:'red'}
+            }
+            render(){
+                var backgaroundcolor ={
+                    backgroundColor: this.state.bgcolor
+                }
+                return(<div style={backgaroundcolor}><h1>Hello, {this.state.name}</h1>
+                    <p> u r from { this.state.address} and ua contact number is {this.state.phone}</p>
+                    <button onClick={this.updatestate}> Click there to change dtate</button>
+                    <button onClick={this.fun01}> Click there to Delete</button>
+                        </div>)
+            }
+            updatestate = () => {
+                this.setState({name:'Minura', bgcolor:'yellow'})
+
+            }
+
+            fun01 = () =>{
+                ReactDOM.unmountComponentAtNode(document.getElementById("root"))
+            }
+
+
+        }
+        ReactDOM.render(<Hello/>,document.getElementById('root'))
+    </script>
+    
+</body>
+</html>

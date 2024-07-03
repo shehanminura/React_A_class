@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        class HelloWorld extends React.Component {
+            render() {
+
+                
+                const letterStyle = {
+                    marginRight: '10px',
+                    textAlign: 'center',
+                    backgroundColor: this.props.bgcolor,
+                    color: 'olive',
+                    padding: '20px',
+                    display: 'inline-block'
+                };
+                
+                return (
+                        <h1 style={letterStyle}>{this.props.children}</h1>
+                );
+            }
+        }
+
+        const dest = document.querySelector('#container');
+        ReactDOM.render(
+            <div>
+                <HelloWorld bgcolor='blue'>shehan</HelloWorld>
+                <HelloWorld bgcolor='yellow'>minura</HelloWorld>
+                <HelloWorld bgcolor='red'>hansana</HelloWorld>
+            </div>,
+            dest
+        );
+    </script>
+</body>
+</html>
